@@ -67,6 +67,16 @@ export default {
           ) {
             this.set ('reply', '');
           }
+
+          // Add event listener for focus event on textarea to clear placeholder text
+          const textarea = document.querySelector('.d-editor-input');
+          if (textarea) {
+            textarea.addEventListener('focus', function() {
+              if (textarea.value === category.topic_template) {
+                textarea.value = '';
+              }
+            });
+          }
         },
       });
     });
