@@ -72,7 +72,7 @@ export default {
           const textarea = document.querySelector('.d-editor-input');
           if (textarea) {
             textarea.addEventListener('focus', function() {
-              if (textarea.value === category.topic_template) {
+              if (textarea.value === category.topic_template.replace(placeholder_indicator, '')) {
                 textarea.value = '';
               }
             });
